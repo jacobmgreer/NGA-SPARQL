@@ -1,0 +1,4 @@
+SELECT DISTINCT ?item ?detail WHERE {
+  ?item p:P2252 ?artist.
+  ?item wdt:P569 ?detail.
+}

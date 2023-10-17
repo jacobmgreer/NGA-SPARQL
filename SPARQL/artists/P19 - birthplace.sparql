@@ -1,0 +1,8 @@
+SELECT DISTINCT ?item ?detail WHERE {
+  ?item p:P2252 ?artist.
+  ?item wdt:P19 ?value.
+  SERVICE wikibase:label {
+    bd:serviceParam wikibase:language "en".
+    ?value rdfs:label ?detail.
+  }
+}

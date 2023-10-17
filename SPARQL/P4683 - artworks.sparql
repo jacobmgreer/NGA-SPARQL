@@ -1,0 +1,5 @@
+SELECT DISTINCT ?item ?itemLabel ?itemDescription WHERE {
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+  ?item p:P4683 ?statement0.
+}
+LIMIT 50000 OFFSET %s
