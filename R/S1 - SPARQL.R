@@ -17,10 +17,14 @@ for (i in 1:ceiling(count.artworks / 50000)) {
   message(paste("SPARQL Art", i))
 }
 
+write.csv(NGA.artworks, "output/artworks.csv", row.names = FALSE)
+
 artist.values <- list.files("SPARQL/artists", full.names = TRUE)
 
 for (i in artist.values) {
-  write.csv(query_wikidata(read_file(i)), paste0("output/artist/", gsub( " .*$", "", basename(i)), ".csv"), row.names = FALSE)
+  write.csv(query_wikidata(read_file(i)),
+            paste0("output/artist/", gsub( " .*$", "", basename(i)), ".csv"),
+            row.names = FALSE)
   message(paste("Artist Details:", i))
 }
 

@@ -1,5 +1,6 @@
-SELECT DISTINCT ?item ?itemLabel ?itemDescription WHERE {
+SELECT DISTINCT ?item ?itemLabel ?itemDescription ?nga WHERE {
   SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
-  ?item p:P4683 ?statement0.
+  ?item p:P4683 ?artid.
+  ?item wdt:P4683 ?nga
 }
 LIMIT 50000 OFFSET %s
